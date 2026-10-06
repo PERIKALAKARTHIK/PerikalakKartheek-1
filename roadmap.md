@@ -1,0 +1,5 @@
+- [x] Build responsive portfolio with accurate sections, navigation, theme, and project filtering.
+- [x] Build dedicated project detail pages with diagrams and honest documentation placeholders.
+- [x] Add SEO metadata and verify desktop/mobile interactions.
+- [ ] Resume PDF pending user-provided file; leave clear inactive controls until available.
+- [x] Apply the requested dark navy, electric blue, sky blue, and white theme across the portfolio and verify both display modes.
