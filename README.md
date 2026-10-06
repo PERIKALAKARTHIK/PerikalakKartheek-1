@@ -8,7 +8,7 @@ The portfolio showcases projects, technical skills, experience, certifications, 
 
 ## 🚀 Live Portfolio
 
-**Portfolio:** [Add your live portfolio URL here]
+**Portfolio:** [http://127.0.0.1:4174/]
 
 **LinkedIn:** [linkedin.com/in/kartheek-perikala](https://www.linkedin.com/in/kartheek-perikala)
 
