@@ -99,6 +99,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const isServerRender = typeof window === "undefined";
+
+  if (!isServerRender) {
+    return (
+      <>
+        <HeadContent />
+        {children}
+        <Scripts />
+      </>
+    );
+  }
+
   return (
     <html lang="en">
       <head>
