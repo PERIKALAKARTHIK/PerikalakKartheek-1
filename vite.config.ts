@@ -7,6 +7,46 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  vite: {
+    plugins: [
+      {
+        name: "client-vendor-code-splitting",
+        configEnvironment(name) {
+          if (name !== "client") return;
+
+          return {
+            build: {
+              rolldownOptions: {
+                output: {
+                  codeSplitting: {
+                    groups: [
+                      {
+                        name: "react-vendor",
+                        test: /node_modules[\\/](react|react-dom|scheduler)[\\/]/,
+                        priority: 30,
+                      },
+                      {
+                        name: "tanstack-vendor",
+                        test: /node_modules[\\/]@tanstack[\\/]/,
+                        priority: 20,
+                      },
+                      {
+                        name: "vendor",
+                        test: /node_modules[\\/]/,
+                        minSize: 20000,
+                        maxSize: 250000,
+                        priority: 10,
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          };
+        },
+      },
+    ],
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
